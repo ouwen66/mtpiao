@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newer.dao.VenueMapper">
+	<!-- 查询所有场馆 -->
+	<select id="queryAll" resultType="com.newer.bean.Venue">
+		select * from tb_venue
+	</select>
+	
+	<!-- 根据id查询场馆 -->
+	<select id="queryById" parameterType="int" resultType="com.newer.bean.Venue">
+		select * from tb_venue where id=#{id}
+	</select>
+	
+	
+	<!-- 根据场馆标题模糊查询-->
+	<select id="queryByTitle" parameterType="String" resultType="com.newer.bean.Venue">
+		select * from tb_venue where title like concat('%',#{title},'%')
+	</select>
+	
+	
+	<!-- 查询热门场馆 -->
+	<select id="queryByHot" parameterType="int" resultType="com.newer.bean.Venue">
+		select * from tb_venue where hot=#{hot}
+	</select>
+</mapper>

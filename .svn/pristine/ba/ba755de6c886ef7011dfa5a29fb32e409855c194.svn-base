@@ -1,0 +1,31 @@
+package com.newer.bean;
+
+/**
+ * 购物车单个商品条目
+ * @author Admin
+ *
+ */
+public class CartItem {
+	private Goods goods;
+	private int quantity;//商品数量
+	private double price;//单个商品合计价格
+	
+	public Goods getGoods() {
+		return goods;
+	}
+	public void setGoods(Goods goods) {
+		this.goods = goods;
+	}
+	public int getQuantity() {
+		return quantity;
+	}
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+	public double getPrice() {
+		return goods.getPrice()*this.quantity;
+	}
+	public void setPrice(double price) {
+		this.price = price;
+	}
+}

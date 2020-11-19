@@ -1,0 +1,83 @@
+* {
+		margin: 0;
+		padding: 0;
+		--imageWidth: 930px;
+		--arrowWidth: 100px;
+		--height: 330px;
+	}
+
+	ul,
+	li {
+		list-style: none;
+	}
+
+	.clear {
+		clear: both;
+	}
+
+	#banner {
+		float: left;
+		width: 930px;
+		/* width: calc(var(--imageWidth)-var(--arrowWidth)*2); */
+		overflow: hidden;
+		margin: left;
+	}
+
+	#box {
+		position: relative;
+		width: var(--imageWidth);
+		height: var(--height);
+		overflow: hidden;
+	}
+
+	#multi-circles {
+		position: absolute;
+		/*定位*/
+		right: 465px;
+		bottom: 10px;
+		z-index: 2;
+	}
+
+	#multi-circles li {
+		float: left;
+		margin-right: 5px;
+		width: 15px;
+		height: 15px;
+		border-radius: 100%;
+		background-color: white;
+	}
+
+	#multi-images {
+		position: absolute;
+		left: 0;
+		top: 0;
+		z-index: 1;
+		width: calc(var(--imageWidth)*2);
+		height: var(--height);
+		transition: 1s;
+	}
+
+	#multi-images img {
+		float: left;
+		width: var(--imageWidth);
+		height: var(--height);
+	}
+
+	#arrow-right,
+	#arrow-left {
+		cursor: pointer;
+		position: absolute;
+		top: 50%;
+		margin-top: -20px;
+		height: 40px;
+		z-index: 3;
+		display: none;
+	}
+
+	#arrow-right {
+		right: 10px;
+	}
+
+	#arrow-left {
+		left: 10px;
+	}
